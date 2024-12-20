@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html,
+  body,
+  #root {
+    @apply w-full h-full m-0 p-0 overflow-hidden bg-black;
+  }
+}
+
+@layer components {
+  canvas {
+    @apply touch-none outline-none w-full h-full absolute top-0 left-0;
+  }
+}
+
+/* Hide controls when pointer is locked */
+:root:has(:is([data-pointerlock-controls="true"])) .controls-info {
+  @apply opacity-0 invisible;
+}
